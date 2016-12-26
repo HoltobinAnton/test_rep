@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/stylesheets/main.css" type="text/css">
+
+  <title>Game</title>
+</head>
+
+<body>
+<div id="container">
+  <h2>Guess the number game</h2>
+  <table>
+    <tr>
+      <td>Chances size: <%=choice_size %> </td>
+      <td>Choice did <%=choice_did%></td>
+      <td>Hint used  <%=hint_used%></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <form method="post" action="/data_check">
+          <input type="text" name="user_code">
+          <input type="submit" value="Check!">
+        </form>
+      </td>
+      <td>
+        <a  href="/get_hint" id ='hint_btn_id' class="btn_a">
+          Get hint
+          <%if(hint)%>
+              <label for="hint_btn_id"> : <%=hint%></label>
+          <%end%>
+        </a>
+      </td>
+    </tr>
+  </table>
+  <div id="valid_answer">
+    <%if(result)%>
+        <span>answer: <%=result%></span>
+    <%end%>
+  </div>
+
+  <div  id="steps_history">
+    <span>Steps_history</span>
+    <ul>
+      <% steps_history.each do |key,value| %>
+        <li><%= "Choice: #{key} result: #{value}"%></li>
+      <% end%>
+    </ul>
+  </div>
+  <a class="btn_a" href="/start">Restart</a>
+</div>
+</body>
+</html>
+

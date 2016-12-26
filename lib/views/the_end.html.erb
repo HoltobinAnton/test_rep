@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/stylesheets/main.css" type="text/css">
+  <title>The end</title>
+</head>
+<body>
+<div id="">
+<h1>The end</h1>
+  <form method="post" action="/save">
+    <label for="name_text">Enter your name: </label>
+    <input type="text" id="name_text" name="name_code">
+    <input type="submit" value="submit">
+  </form>
+  <p>Your secret code was: <%= secret_code %></p>
+  <span>Game saved</span>
+  <p>All result :</p>
+  <ul>
+    <% load_games.lines do |value| %>
+        <li><%="#{value}"%></li>
+    <% end%>
+  </ul>
+</div>
+</body>
+</html>
+

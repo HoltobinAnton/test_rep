@@ -1,0 +1,31 @@
+
+*{
+    font-weight: normal;
+    text-align: center;
+}
+
+body {
+    background-color: gainsboro;
+}
+
+table {
+    margin:  0 auto;
+}
+
+li {
+    list-style-typet: none;
+}
+
+.btn_a{
+    display:block;
+    height:52px;
+    line-height:52px;
+    outline:none;
+    color:#333;
+    font-size:18px;
+    text-indent:20px;
+    text-decoration:none;
+    text-align:center;
+    text-shadow: #333 0px -1px 0px;
+}
+.btn_a:hover{ color:#222 }
